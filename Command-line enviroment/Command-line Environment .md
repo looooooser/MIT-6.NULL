@@ -13,3 +13,5 @@ One way to achieve this is to use the [`wait`](https://www.man7.org/linux/man-pa
 
     However, this strategy will fail if we start in a different bash session, since `wait` only works for child processes. One feature we did not discuss in the notes is that the `kill` command's exit status will be zero on success and nonzero otherwise. `kill -0` does not send a signal but will give a nonzero exit status if the process does not exist.
     Write a bash function called `pidwait` that takes a pid and waits until the given process completes. You should use `sleep` to avoid wasting CPU unnecessarily.
+    
+- Answer:see the file [pidwait.sh](./pidwait.sh)

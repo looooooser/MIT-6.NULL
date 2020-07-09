@@ -17,8 +17,8 @@ One way to achieve this is to use the [`wait`](https://www.man7.org/linux/man-pa
 - Answer: See the file [pidwait.sh](./pidwait.sh)
 
 Notes: Four ways to execute .sh file.  
-1. `./pidwait.sh` This way execute the file in the current shell session, it will take pidwait.sh as a file, so we need the execute permission(x), and when we run this program, we have two child process one is pidwait, another is sleep process, if we type `ctrl-c`, both pidwait and sleep will stop.
-2. `sh pidwait.sh` In this way, we start a new bash session to execute the command in the file, it don't need the execute permission, since we don't take it as a file. In the run time, it also have two process, one is bash, another is sleep and if we type `ctrl-c`, the bash will stop, so as the sleep.
-3. `source pidwait.sh` This way run the command in the current shell session directly, it also no need the execute permission, but this way will only have one process is running--sleep, if we type `ctrl-c`, just stop the sleep process.
+1. `./pidwait.sh` This way execute the file in the current shell session, it will take pidwait.sh as a file, so we need the execute permission(x), and when we run this program, we have two child process one is `pidwait`, another is `sleep` process, if we type `ctrl-c`, both pidwait and sleep will stop.
+2. `sh pidwait.sh` In this way, we start a new bash session to execute the command in the file, it don't need the execute permission, since we don't take it as a file. In the run time, it also have two process, one is `bash`, another is `sleep` and if we type `ctrl-c`, the bash will stop, so as the sleep.
+3. `source pidwait.sh` This way run the command in the current shell session directly, it also no need the execute permission, but this way will only have one process is running--`sleep`, if we type `ctrl-c`, just stop the sleep process.
 4. `. pidwait.sh` Same as the third way.
 

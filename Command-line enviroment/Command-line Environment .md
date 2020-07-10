@@ -22,3 +22,6 @@ Notes: Four ways to execute .sh file.
 3. `source pidwait.sh` This way run the command in the current shell session directly, it also no need the execute permission, but this way will only have one process is running--`sleep`, if we type `ctrl-c`, just stop the sleep process.
 4. `. pidwait.sh` Same as the third way.
 
+# Terminal multiplexer
+
+1. Follow this `tmux` [tutorial](https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/)  and then learn how to do some basic customizations following these [steps](https://www.hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf/).

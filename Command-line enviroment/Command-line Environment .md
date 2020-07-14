@@ -25,3 +25,41 @@ Notes: Four ways to execute .sh file.
 # Terminal multiplexer
 
 1. Follow this `tmux` [tutorial](https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/)  and then learn how to do some basic customizations following these [steps](https://www.hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf/).
+
+# Aliase
+
+1. Create an alias `dc` that resolves to `cd` for when you type it wrongly.
+
+- Answer: `alias dc=cd`
+
+2. Run `history | awk '{$1="";print substr($0,2)}' | sort | uniq -c | sort -n | tail -n 10` to get your top 10 most used commands and consider writing shorter aliases for them. Note: this works for Bash; if you’re using ZSH, use history 1 instead of just history.
+
+- Answer:
+```bash
+vim .tmux.conf
+rqt_graph
+vim .vimrc
+roslaunch my_turtlebot_nav turtlebot_stage.launch
+gedit ~/.bashrc
+vim .bashrc
+ls
+source ~/ros/devel/setup.bash
+tmux
+ps
+------------------------------------
+alias rsl="roslaunch my_turtlebot_nav turtlebot_stage.launch"
+alias gb="gedit ~/.bashrc"
+```
+
+# Dotfiles
+
+Let’s get you up to speed with dotfiles.
+
+1. Create a folder for your dotfiles and set up version control.
+2. Add a configuration for at least one program, e.g. your shell, with some customization (to start off, it can be something as simple as customizing your shell prompt by setting `$PS1`).
+3. Set up a method to install your dotfiles quickly (and without manual effort) on a new machine. This can be as simple as a shell script that calls `ln -s` for each file, or you could use a [specialized utility](https://dotfiles.github.io/utilities/).
+4. Test your installation script on a fresh virtual machine.
+5. Migrate all of your current tool configurations to your dotfiles repository.
+6. Publish your dotfiles on GitHub.
+
+My dotfile click [here](../.dotfile).

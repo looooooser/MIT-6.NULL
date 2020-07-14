@@ -62,4 +62,4 @@ Let’s get you up to speed with dotfiles.
 5. Migrate all of your current tool configurations to your dotfiles repository.
 6. Publish your dotfiles on GitHub.
 
-My dotfile click [here](../../../dotfile).
+My dotfile click [here](looooooser/dotfile).

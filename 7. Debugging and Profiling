@@ -1,0 +1,9 @@
+# Exercises
+
+## Debugging
+1. Use `journalctl` on Linux or `log show` on macOS to get the super user accesses and commands in the last day.
+If there aren't any you can execute some harmless commands such as `sudo ls` and check again.
+
+- Answer: `journalctl -S "yesterday" | grep sudo`
+
+2. Do [this](https://github.com/spiside/pdb-tutorial) hands on `pdb` tutorial to familiarize yourself with the commands. For a more in depth tutorial read [this](https://realpython.com/python-debugging-pdb).

@@ -61,9 +61,9 @@ If there aren't any you can execute some harmless commands such as `sudo ls` and
 
    Put the code into a file and make it executable. Install [`pycallgraph`](http://pycallgraph.slowchop.com/en/master/). Run the code as is with `pycallgraph graphviz -- ./fib.py` and check the `pycallgraph.png` file. How many times is `fib0` called?. We can do better than that by memoizing the functions. Uncomment the commented lines and regenerate the images. How many times are we calling each `fibN` function now?
 
-- Answer: Acorrding to the [image](./pycallgraph.png), fib0 have been called 21 times and fib1 34 times.
+- Answer: Acorrding to the [image](./pycallgraph1.png), fib0 have been called 21 times and fib1 34 times.
 
     Hint: lru_cache may not be imported depending on the python version. Python2.7 should import like this: `from backports.functools_lru_cache`.
           
-    The new [image] shows, each fib only execute once.
+    The new [image](./pycallgraph2.png) shows, each fib only execute once.
        

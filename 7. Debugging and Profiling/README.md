@@ -32,10 +32,11 @@ If there aren't any you can execute some harmless commands such as `sudo ls` and
 
 ## Profiling
 
-1. [Here](/static/files/sorts.py) are some sorting algorithm implementations. Use [`cProfile`](https://docs.python.org/3/library/profile.html) and [`line_profiler`](https://github.com/rkern/line_profiler) to compare the runtime of insertion sort and quicksort. What is the bottleneck of each algorithm? Use then `memory_profiler` to check the memory consumption, why is insertion sort better? Check now the inplace version of quicksort. Challenge: Use `perf` to look at the cycle counts and cache hits and misses of each algorithm.
+1. [Here](./sort.py) are some sorting algorithm implementations. Use [`cProfile`](https://docs.python.org/3/library/profile.html) and [`line_profiler`](https://github.com/rkern/line_profiler) to compare the runtime of insertion sort and quicksort. What is the bottleneck of each algorithm? Use then `memory_profiler` to check the memory consumption, why is insertion sort better? Check now the inplace version of quicksort. Challenge: Use `perf` to look at the cycle counts and cache hits and misses of each algorithm.
 
-- Answer:Use `python -m cProfile sort.py 1000` to compare the runtime of insertion sort and quicksort.
-         Use `python -m memory_profiler sort.py` to compare the memory consumption of each algorithm.
+- Answer:  
+         Use `python -m cProfile sort.py 1000` to compare the runtime of insertion sort and quicksort.  
+         Use `python -m memory_profiler sort.py` to compare the memory consumption of each algorithm.  
          Hint: add `@profile` to start the record.
  
 2. Here's some (arguably convoluted) Python code for computing Fibonacci numbers using a function for each number.
@@ -59,3 +60,10 @@ If there aren't any you can execute some harmless commands such as `sudo ls` and
    ```
 
    Put the code into a file and make it executable. Install [`pycallgraph`](http://pycallgraph.slowchop.com/en/master/). Run the code as is with `pycallgraph graphviz -- ./fib.py` and check the `pycallgraph.png` file. How many times is `fib0` called?. We can do better than that by memoizing the functions. Uncomment the commented lines and regenerate the images. How many times are we calling each `fibN` function now?
+
+- Answer: Acorrding to the [image](./pycallgraph.png), fib0 have been called 21 times and fib1 34 times.
+
+    Hint: lru_cache may not be imported depending on the python version. Python2.7 should import like this: `from backports.functools_lru_cache`.
+          
+    The new [image] shows, each fib only execute once.
+       

@@ -67,3 +67,23 @@ If there aren't any you can execute some harmless commands such as `sudo ls` and
           
     The new [image](./pycallgraph2.png) shows, each fib only execute once.
        
+3. A common issue is that a port you want to listen on is already taken by another process. Let's learn how to discover that process pid. First execute `python -m http.server 4444` to start a minimal web server listening on port `4444`. On a separate terminal run `lsof | grep LISTEN` to print all listening processes and ports. Find that process pid and terminate it by running `kill <PID>`.
+
+- Answer:
+```bash
+python3 -m http.server 4444
+Serving HTTP on 0.0.0.0 port 4444 ...
+----------------------------------------
+lsof | grep LISTEN
+python3   20038                 lalala    3u     IPv4             241268       0t0        TCP *:4444 (LISTEN)
+----------------------------------------
+kill 20038
+```
+
+4. Limiting processes resources can be another handy tool in your toolbox.
+Try running `stress -c 3` and visualize the CPU consumption with `htop`. Now, execute `taskset --cpu-list 0,2 stress -c 3` and visualize it. Is `stress` taking three CPUs? Why not? Read [`man taskset`](https://www.man7.org/linux/man-pages/man1/taskset.1.html).
+Challenge: achieve the same using [`cgroups`](https://www.man7.org/linux/man-pages/man7/cgroups.7.html). Try limiting the memory consumption of `stress -m`.
+
+- Answer: `Taskset` is used to set or retrieve a process's cpu affinity. And maybe my cpu only have two cores, I haven't seen any difference between two commands.
+
+5. (Advanced) The command `curl ipinfo.io` performs a HTTP request an fetches information about your public IP. Open [Wireshark](https://www.wireshark.org/) and try to sniff the request and reply packets that `curl` sent and received. (Hint: Use the `http` filter to just watch HTTP packets).

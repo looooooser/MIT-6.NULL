@@ -35,3 +35,18 @@
     that runs `make paper.pdf` and refuses the commit if the `make`
     command fails. This should prevent any commit from having an
     unbuildable version of the paper.
+
+ 4. Set up a simple auto-published page using [GitHub
+    Pages](https://pages.github.com/).
+    Add a [GitHub Action](https://github.com/features/actions) to the
+    repository to run `shellcheck` on any shell files in that
+    repository (here is [one way to do
+    it](https://github.com/marketplace/actions/shellcheck)). Check that
+    it works!
+    
+ 5. [Build your
+    own](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/building-actions)
+    GitHub action to run [`proselint`](http://proselint.com/) or
+    [`write-good`](https://github.com/btford/write-good) on all the
+    `.md` files in the repository. Enable it in your repository, and
+    check that it works by filing a pull request with a typo in it.

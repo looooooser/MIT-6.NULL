@@ -36,6 +36,18 @@
     command fails. This should prevent any commit from having an
     unbuildable version of the paper.
 
+ - pre-commit:
+    ```bash
+    #!/bin/sh
+
+    if ! make paper.pdf ; then
+    echo "Cannot make paper.pdf"
+    exit 1
+    fi
+    ```
+     
+    And if `make paper.pdf` failed, git will echo "Cannot make paper.pdf". I test it with `chmod -x plot.py`.
+ 
  4. Set up a simple auto-published page using [GitHub
     Pages](https://pages.github.com/).
     Add a [GitHub Action](https://github.com/features/actions) to the
